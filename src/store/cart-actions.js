@@ -2,7 +2,8 @@ import { cartActions } from './cart-slice';
 import { uiActions } from './ui-slice';
 
 const firebaseURL =
-	'https://redux-shopping-d341c-default-rtdb.europe-west1.firebasedatabase.app/';
+	// add cartItems.json to firebase url
+	'https://redux-shopping-d341c-default-rtdb.europe-west1.firebasedatabase.app/cartItems.json';
 
 export const fetchData = () => {
 	return async (dispatch) => {
@@ -43,6 +44,7 @@ export const sendCartData = (cart) => {
 				method: 'PUT',
 				body: JSON.stringify(cart),
 			});
+			// eslint-disable-next-line
 			const data = await res.json();
 			// Send state as Request is successful
 			dispatch(

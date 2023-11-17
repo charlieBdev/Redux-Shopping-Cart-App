@@ -1,7 +1,7 @@
 import React from 'react';
+import './Layout.css';
 import Header from './Header';
 import Products from './Products';
-import './Layout.css';
 import CartItems from './CartItems';
 import { useSelector } from 'react-redux';
 
@@ -13,6 +13,8 @@ const Layout = () => {
 	itemsList.forEach((item) => {
 		total += item.totalPrice;
 	});
+
+	// let total = itemsList.reduce((acc, curr) => acc + curr.totalPrice, 0);
 
 	return (
 		<React.Fragment>
