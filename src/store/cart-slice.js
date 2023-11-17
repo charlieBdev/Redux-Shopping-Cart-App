@@ -12,9 +12,13 @@ const cartSlice = createSlice({
 	reducers: {
 		replaceData(state, action) {
 			state.totalQuantity = action.payload.totalQuantity;
-			state.itemsList = action.payload.itemsList;
+			state.itemsList = action.payload.itemsList || [];
 		},
 		addToCart(state, action) {
+			console.log('State before adding to cart:', state);
+			console.log('Action payload:', action.payload);
+			console.log('itemsList:', state.itemsList);
+
 			state.changed = true;
 			const newItem = action.payload;
 			// to check if item is already available

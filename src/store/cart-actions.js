@@ -14,7 +14,6 @@ export const fetchData = () => {
 		};
 		try {
 			const cartData = await fetchHandler();
-			console.log(cartData);
 			dispatch(cartActions.replaceData(cartData));
 		} catch (err) {
 			dispatch(

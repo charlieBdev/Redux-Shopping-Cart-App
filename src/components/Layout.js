@@ -10,9 +10,11 @@ const Layout = () => {
 	const itemsList = useSelector((state) => state.cart.itemsList);
 	const showCart = useSelector((state) => state.cart.showCart);
 
-	itemsList.forEach((item) => {
-		total += item.totalPrice;
-	});
+	if (itemsList) {
+		itemsList.forEach((item) => {
+			total += item.totalPrice;
+		});
+	}
 
 	// let total = itemsList.reduce((acc, curr) => acc + curr.totalPrice, 0);
 
